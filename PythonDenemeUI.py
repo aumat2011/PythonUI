@@ -1,8 +1,14 @@
 import sys
 
 from PyQt5 import QtWidgets
-def Pencere():
+
+def Window():
     app = QtWidgets.QApplication(sys.argv)
+    pencere = QtWidgets.QWidget()
+    pencere.setGeometry(200, 200, 500, 800)
+    pencere.setWindowTitle("A.U.M.G.F.R.S")
+    pencere.setGeometry(200,200,500,800)
+
     okay = QtWidgets.QPushButton("Tamam")
     cancel = QtWidgets.QPushButton("İptal")
 
@@ -12,26 +18,13 @@ def Pencere():
     h_box.addWidget(okay)
     h_box.addWidget(cancel)
 
-
     v_box = QtWidgets.QVBoxLayout()
 
     v_box.addStretch()
     v_box.addLayout(h_box)
 
-
-
-    pencere = QtWidgets.QWidget()
-    pencere.setWindowTitle("PyQt5 Ders 4")
-
     pencere.setLayout(v_box)
-
-    pencere.setGeometry(100,100,500,500)
-
     pencere.show()
+    sys.exit(app.exec())
 
-    sys.exit(app.exec_())
-
-
-Pencere()
-
-
+Window()
